@@ -1,0 +1,326 @@
+/* src/App.css */
+
+/* Add this to your CSS file */
+.chart-container {
+  display: flex;                  /* Enable flexbox layout for parent */
+  flex-direction: column;         /* Stack children vertically */
+  align-items: center;            /* Center items horizontally */
+  justify-content: center;        /* Center items vertically */
+  height: 100%;                   /* Ensure it takes full height */
+  width: 100%;                    /* Ensure it takes full width */
+  margin-top: 20px;              /* Optional margin on top */
+}
+
+.centered-text {
+  font-size: 100px;              /* Font size */
+  font-weight: bold;             /* Bold text */
+  margin: 0;                     /* Remove default margin */
+}
+
+
+.App {
+  background-color: rgb(10, 4, 15); /* Dark blue background */
+  color: white; /* Ensure text is readable */
+  min-height: 100vh; /* Full height */
+  text-align: center;
+}
+
+.App-header {
+  background-color: rgb(10, 4, 15); /* Dark blue background for header */
+  height: 55px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  position: sticky; /* Keep header fixed at top */
+  top: 0;
+  z-index: 1000;
+}
+
+.App-header h1 {
+  color: white;
+  font-size: 36px;
+  margin: 0;
+  display: inline;
+}
+
+.App-header img { /*Logo Image: top right*/
+  height: 49px;
+}
+
+.menu { /*Menu Button: toggle sidebar*/
+  font-size: 30px; 
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.menu:hover {
+  color: rgb(184, 184, 184);
+}
+
+.sidebar {
+  position: fixed;
+  top: 100px; /* Gap from the top */
+  left: 0;
+  width: 250px;
+  height: calc(100% - 100px); /* Adjust height to match the new top position */
+  background-color: #256dda;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  z-index: 10;
+  border-radius: 15px; /* Adjust the value for more or less rounding */
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Arrange items in a column */
+  align-items: flex-start; /* Align items to the left */
+}
+.centered-header {
+  text-align: center;
+  align-items: center; /* Align items to the left */
+
+  width: 100%;
+}
+
+.contributors-container {
+  display: flex;                  /* Enable flexbox layout for parent */
+  flex-direction: column;         /* Stack children vertically */
+  align-items: flex-start;        /* Align items to the start (left) horizontally */
+  justify-content: flex-start;    /* Align items to the start (top) vertically */
+  height: 100%;                   /* Ensure it takes full height */
+  width: 100%;                    /* Ensure it takes full width */
+  margin-top: 0px;    
+  margin-right: 40px;              /* Move container to the left by 20px */
+
+              /* Optional margin on top */
+}
+
+.contributors-list {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 0; /* Remove default margin */
+}
+
+.contributor-item {
+  margin: 10px 0 10px 0; /* Top and bottom margin of 10px */
+  padding: 0px;
+  text-align: left; /* Ensure each item is aligned to the left */
+}
+
+.contributor-link {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contributor-link:hover {
+  text-decoration: underline;
+}
+
+.contributions-count {
+  color: #555;
+  margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+.sidebar h2 {
+  text-align: left; /* Align text within the h2 element to the left */
+  width: 100%; /* Take full width */
+}
+
+.sidebar h2:hover {
+  color: rgb(87, 160, 228); /* Change color on hover */
+}
+
+.sidebar hr {
+  border: none; /* No border */
+  height: 2px; /* Height of the line */
+  background-color: #fff; /* Line color */
+  margin: 10px 0; /* Margins */
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+
+.filter-dropdown, .repo-dropdown, .type-dropdown, .size-dropdown { /*Drop down settings: In sidebar*/
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  color: #00004c;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.widgets-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 250px; /* Ensure widgets are placed outside sidebar */
+
+
+  
+}
+
+
+:root {
+  --widget-background-color: green; /* Default color */
+}
+
+
+.widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Keeps content at the bottom */
+  align-items: flex-end; /* Aligns content to the right */
+  border: 2px solid #333;
+  background-color: var(--widget-background-color); /* Slightly less dark than pure black */
+  color: white;
+  margin-top: 10px;
+  margin-right: 100px;
+  padding: 50px;
+  transition: width 0.3s ease, height 0.3s ease;
+  border-radius: 8px;
+  position: relative; /* Required for absolute positioning of h3 */
+  background-color: #0366d6;
+}
+
+
+
+
+
+
+.grey-text {
+  color: white; /* Light grey color */
+  position: absolute; /* Absolute positioning */
+  top: 10px; /* Distance from the top */
+  left: 10px; /* Change to left for top-left positioning */
+  margin: 0; /* Remove default margin */
+}
+
+.small-grey-text {
+  color: white; /* Light grey color */
+  position: absolute; /* Absolute positioning */
+  top: 40px; /* Distance from the top */
+  left: 10px; /* Change to left for top-left positioning */
+  margin: 0; /* Remove default margin */
+  font-size: 20px; /* Smaller font size */
+}
+
+/* Widget sizes */
+.widget-small {
+  width: 300px;
+  height: 300px;
+}
+
+.widget-medium {
+  width: 610px;
+  height: 300px;
+}
+
+.widget-large {
+  width: 610px;
+  height: 610px;
+}
+
+button {
+  margin: 5px; 
+  padding: 5px; 
+  font-size: 14px; 
+  cursor: pointer;
+}
+
+.add-widget-btn {
+  margin-bottom: 10px; 
+  padding: 5px 10px; 
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.chart-stats-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.horizontal-layout {
+  flex-direction: row;
+}
+
+.vertical-layout {
+  flex-direction: column;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  display: flex;
+}
+
+.MuiMenuItem-root {
+  background-color: white; /* Set background color to white */
+  color: black; /* Set text color to black for contrast */
+}
+
+.MuiMenuItem-root:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+/* CSS for the three dots icon and dropdown menu in App.css */
+
+.menu-icon {
+  cursor: pointer; /* Change cursor to pointer */
+  font-size: 24px; /* Adjust size of the dots */
+  color: white; /* Color of the dots */
+  position: absolute; /* Position it in the corner */
+  right: 20px; /* Distance from the right */
+  top: 20px; /* Distance from the top */
+}
+
+.menu-dropdown {
+  position: absolute; /* Position dropdown relative to parent */
+  right: 20px; /* Align with the icon */
+  top: 50px; /* Space below the icon */
+  background-color: #256dda; /* Match the sidebar color */
+  color: white; /* Text color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for the dropdown */
+  padding: 10px; /* Padding for dropdown */
+  z-index: 100; /* Ensure it appears above other content */
+}
+
+.menu-dropdown div {
+  padding: 5px; /* Padding for menu items */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+.menu-dropdown div:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Highlight on hover */
+}
